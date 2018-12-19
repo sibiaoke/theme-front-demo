@@ -1,24 +1,16 @@
-$--font-size-base: 12px;
-$--font-path: '~element-ui/lib/theme-chalk/fonts';
+$--font-path: '~@sibiaoke/ui-theme/src/fonts';
 
-@import '~element-ui/packages/theme-chalk/src/index';
+@import '~@sibiaoke/ui-theme/src/index';
 
 body {
   font-family: 'Ericsson Hilda', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
     'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
-  font-weight: 400;
-  font-size: $--font-size-base;
-  color: $--color-black;
-  -webkit-font-smoothing: antialiased;
 
   .title {
     font-size: 16px !important;
   }
   .el-col {
     margin-bottom: 24px;
-  }
-  [class^='el-'] {
-    font-size: 12px;
   }
 }
 
