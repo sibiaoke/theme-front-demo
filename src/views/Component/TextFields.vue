@@ -26,7 +26,7 @@
       </el-col>
       <el-col :span="10">
         <el-form-item label="Label">
-          <el-input placeholder="Placeholder" disabled />
+          <el-input placeholder="Placeholder" disabled value="Text" />
         </el-form-item>
       </el-col>
     </el-row>
@@ -46,7 +46,7 @@
       </el-col>
       <el-col :span="10">
         <el-form-item label="Label">
-          <el-input placeholder="Placeholder" class="focus" value="Text" />
+          <el-input placeholder="Placeholder" class="focus" value="Text" ref="focusedInput" />
         </el-form-item>
       </el-col>
     </el-row>
@@ -97,6 +97,7 @@ export default {
   },
   mounted() {
     this.$refs.form.validate()
+    this.$refs.focusedInput.focus()
   }
 }
 </script>

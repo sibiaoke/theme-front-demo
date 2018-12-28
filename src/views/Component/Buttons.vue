@@ -23,7 +23,7 @@
     </el-col>
     <el-col :span="2">&nbsp;</el-col>
     <el-col :span="4">
-      <el-button type="error">Action</el-button>
+      <el-button type="danger">Action</el-button>
     </el-col>
     <el-col :span="2">
       <label>Left</label>
@@ -47,7 +47,7 @@
       <label>Disabled</label>
     </el-col>
     <el-col :span="4">
-      <el-button disabled type="error">Action</el-button>
+      <el-button disabled type="danger">Action</el-button>
     </el-col>
     <el-col :span="2">
       <label>Right</label>
@@ -72,7 +72,7 @@
       <label>On hover</label>
     </el-col>
     <el-col :span="10">
-      <el-button type="error" class="hover">Action</el-button>
+      <el-button type="danger" class="hover">Action</el-button>
     </el-col>
     <el-col :span="2">
       <label>Pressed</label>
@@ -90,7 +90,7 @@
       <label>Pressed</label>
     </el-col>
     <el-col :span="10">
-      <el-button type="error" class="active">Action</el-button>
+      <el-button type="danger" class="active">Action</el-button>
     </el-col>
 
   </el-row>
