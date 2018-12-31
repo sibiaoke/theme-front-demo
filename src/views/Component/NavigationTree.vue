@@ -4,25 +4,25 @@
       <div>
         <label>Collapsed (current page is under Group of pages 1)</label>
       </div>
-      <el-menu theme="dark" active-name="1.1">
-        <template v-for="(item, index) in menus">
-          <el-submenu :index="index+''" v-if="item.children && item.children.length" :key="item.key" :name="item.key">
+      <el-menu default-active="1.1" :default-openeds="[]">
+        <template v-for="item in menus" >
+          <el-submenu :index="item.key" v-if="item.children && item.children.length" :key="item.key" :name="item.key">
             <template slot="title">
-              {{item.title}}
+              <div>{{item.title}}</div>
             </template>
-            <template v-for="(sub,i) in item.children">
-              <el-submenu :index="`${index}_${i}`" v-if="sub.children && sub.children.length" :key="sub.key" :name="sub.key">
+            <template v-for="sub in item.children">
+              <el-submenu :index="sub.key" v-if="sub.children && sub.children.length" :key="sub.key" :name="sub.key">
                 <template slot="title">
-                  {{sub.title}}
+                  <div>{{sub.title}}</div>
                 </template>
-                <template v-for="(sub,ii) in sub.children">
-                  <el-menu-item :index="`${index}_${i}_${ii}`" :name="sub.key" :key="sub.key">{{sub.title}}</el-menu-item>
+                <template v-for="sub in sub.children">
+                  <el-menu-item :index="sub.key" :name="sub.key" :key="sub.key">{{sub.title}}</el-menu-item>
                 </template>
               </el-submenu>
-              <el-menu-item :index="`${index}_${i}`" v-else :name="sub.key" :key="sub.key">{{sub.title}}</el-menu-item>
+              <el-menu-item :index="sub.key" v-else :name="sub.key" :key="sub.key">{{sub.title}}</el-menu-item>
             </template>
           </el-submenu>
-          <el-menu-item :index="index+''" v-else :name="item.key" :key="item.key">{{item.title}}</el-menu-item>
+          <el-menu-item :index="item.key" v-else :name="item.key" :key="item.key">{{item.title}}</el-menu-item>
         </template>
       </el-menu>
     </el-col>
@@ -30,25 +30,25 @@
       <div>
         <label>Expanded (Page 1.1 is current page)</label>
       </div>
-      <el-menu theme="dark" :open-names="['1']" active-name="1.1">
-        <template v-for="(item,index) in menus">
-          <el-submenu :index="index+''" v-if="item.children && item.children.length" :key="item.key" :name="item.key">
+      <el-menu default-active="1.1">
+        <template v-for="item in menus" >
+          <el-submenu :index="item.key" v-if="item.children && item.children.length" :key="item.key" :name="item.key">
             <template slot="title">
-              {{item.title}}
+              <div>{{item.title}}</div>
             </template>
-            <template v-for="(sub,i) in item.children">
-              <el-submenu :index="`${index}_${i}`" v-if="sub.children && sub.children.length" :key="sub.key" :name="sub.key">
+            <template v-for="sub in item.children">
+              <el-submenu :index="sub.key" v-if="sub.children && sub.children.length" :key="sub.key" :name="sub.key">
                 <template slot="title">
-                  {{sub.title}}
+                  <div>{{sub.title}}</div>
                 </template>
-                <template v-for="(sub,ii) in sub.children">
-                  <el-menu-item :index="`${index}_${i}_${ii}`" :name="sub.key" :key="sub.key">{{sub.title}}</el-menu-item>
+                <template v-for="sub in sub.children">
+                  <el-menu-item :index="sub.key" :name="sub.key" :key="sub.key">{{sub.title}}</el-menu-item>
                 </template>
               </el-submenu>
-              <el-menu-item :index="`${index}_${i}`" v-else :name="sub.key" :key="sub.key">{{sub.title}}</el-menu-item>
+              <el-menu-item :index="sub.key" v-else :name="sub.key" :key="sub.key">{{sub.title}}</el-menu-item>
             </template>
           </el-submenu>
-          <el-menu-item :index="index+''" v-else :name="item.key" :key="item.key">{{item.title}}</el-menu-item>
+          <el-menu-item :index="item.key" v-else :name="item.key" :key="item.key">{{item.title}}</el-menu-item>
         </template>
       </el-menu>
     </el-col>
@@ -56,25 +56,25 @@
       <div>
         <label>Hovering on a specific item</label>
       </div>
-      <el-menu theme="dark">
-        <template v-for="(item ,index) in menus">
-          <el-submenu :index="index+''" v-if="item.children && item.children.length" :key="item.key" :name="item.key">
+      <el-menu default-active="1.1">
+        <template v-for="item in menus" >
+          <el-submenu :index="item.key" v-if="item.children && item.children.length" :key="item.key" :name="item.key">
             <template slot="title">
-              {{item.title}}
+              <div>{{item.title}}</div>
             </template>
-            <template v-for="(sub,i) in item.children">
-              <el-submenu :index="`${index}_${i}`" v-if="sub.children && sub.children.length" :key="sub.key" :name="sub.key">
+            <template v-for="sub in item.children">
+              <el-submenu :index="sub.key" v-if="sub.children && sub.children.length" :key="sub.key" :name="sub.key">
                 <template slot="title">
-                  {{sub.title}}
+                  <div>{{sub.title}}</div>
                 </template>
-                <template v-for="(sub,ii) in sub.children">
-                  <el-menu-item :index="`${index}_${i}_${ii}`" :name="sub.key" :key="sub.key">{{sub.title}}</el-menu-item>
+                <template v-for="sub in sub.children">
+                  <el-menu-item :index="sub.key" :name="sub.key" :key="sub.key">{{sub.title}}</el-menu-item>
                 </template>
               </el-submenu>
-              <el-menu-item :index="`${index}_${i}`" v-else :name="sub.key" :key="sub.key">{{sub.title}}</el-menu-item>
+              <el-menu-item :index="sub.key" v-else :name="sub.key" :key="sub.key">{{sub.title}}</el-menu-item>
             </template>
           </el-submenu>
-          <el-menu-item :index="index+''" v-else :name="item.key" :key="item.key">{{item.title}}</el-menu-item>
+          <el-menu-item :index="item.key" v-else :name="item.key" :key="item.key">{{item.title}}</el-menu-item>
         </template>
       </el-menu>
     </el-col>
@@ -82,25 +82,25 @@
       <div>
         <label>Subgroup expanded</label>
       </div>
-      <el-menu default-active="1_0" theme="dark" :open-names="['1', '1.3']" active-name="1.1">
-        <template v-for="(item, index) in menus" >
-          <el-submenu :index="index+''" v-if="item.children && item.children.length" :key="item.key" :name="item.key">
+      <el-menu default-active="1.1" :default-openeds="['1', '1.3']">
+        <template v-for="item in menus" >
+          <el-submenu :index="item.key" v-if="item.children && item.children.length" :key="item.key" :name="item.key">
             <template slot="title">
-              {{item.title}}
+              <div>{{item.title}}</div>
             </template>
-            <template v-for="(sub,i) in item.children">
-              <el-submenu :index="`${index}_${i}`" v-if="sub.children && sub.children.length" :key="sub.key" :name="sub.key">
+            <template v-for="sub in item.children">
+              <el-submenu :index="sub.key" v-if="sub.children && sub.children.length" :key="sub.key" :name="sub.key">
                 <template slot="title">
-                  {{sub.title}}
+                  <div>{{sub.title}}</div>
                 </template>
-                <template v-for="(sub,ii) in sub.children">
-                  <el-menu-item :index="`${index}_${i}_${ii}`" :name="sub.key" :key="sub.key">{{sub.title}}</el-menu-item>
+                <template v-for="sub in sub.children">
+                  <el-menu-item :index="sub.key" :name="sub.key" :key="sub.key">{{sub.title}}</el-menu-item>
                 </template>
               </el-submenu>
-              <el-menu-item :index="`${index}_${i}`" v-else :name="sub.key" :key="sub.key">{{sub.title}}</el-menu-item>
+              <el-menu-item :index="sub.key" v-else :name="sub.key" :key="sub.key">{{sub.title}}</el-menu-item>
             </template>
           </el-submenu>
-          <el-menu-item :index="index+''" v-else :name="item.key" :key="item.key">{{item.title}}</el-menu-item>
+          <el-menu-item :index="item.key" v-else :name="item.key" :key="item.key">{{item.title}}</el-menu-item>
         </template>
       </el-menu>
     </el-col>

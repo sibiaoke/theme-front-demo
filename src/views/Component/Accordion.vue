@@ -4,7 +4,7 @@
       <div>
         <label>No lines - all items collapsed</label>
       </div>
-      <el-collapse simple accordion no-lines>
+      <el-collapse accordion no-lines>
         <el-collapse-item :title="`Item item`"  :name="`${item}`" v-for="item in 3" :key="item">
           <div>Accordion content goes here. It will expand the height of accordion bar and pushes down ths items below.</div>
         </el-collapse-item >
@@ -14,7 +14,7 @@
       <div>
         <label>No lines - Item 02 expanded</label>
       </div>
-      <el-collapse simple accordion no-lines value="2">
+      <el-collapse accordion no-lines value="2">
         <el-collapse-item  :title="`Item item`" :name="`${item}`" v-for="item in 3" :key="item">
           <div>Accordion content goes here. It will expand the height of accordion bar and pushes down ths items below.</div>
         </el-collapse-item >
@@ -24,7 +24,7 @@
       <div>
         <label>With lines - all items collapsed</label>
       </div>
-      <el-collapse simple accordion>
+      <el-collapse accordion>
         <el-collapse-item :title="`Item item`" :name="`${item}`" v-for="item in 3" :key="item">
           <div >Accordion content goes here. It will expand the height of accordion bar and pushes down ths items below.</div>
         </el-collapse-item >
@@ -34,7 +34,7 @@
       <div>
         <label>With lines - Item 02 expanded</label>
       </div>
-      <el-collapse simple accordion value="2">
+      <el-collapse accordion value="2">
         <el-collapse-item :title="`Item item`"  :name="`${item}`" v-for="item in 3" :key="item">
           <div>Accordion content goes here. It will expand the height of accordion bar and pushes down ths items below.</div>
         </el-collapse-item >

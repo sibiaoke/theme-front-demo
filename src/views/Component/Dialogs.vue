@@ -22,7 +22,7 @@
     <el-dialog :visible.sync="modal2" title="Dialog header">
       <p>Description</p>
       <div slot="footer">
-        <el-button type="error" @click="modal2 = false">Destructive action</el-button>
+        <el-button type="danger" @click="modal2 = false">Destructive action</el-button>
         <el-button @click="modal2 = false">Action</el-button>
       </div>
     </el-dialog>

@@ -33,7 +33,19 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '~@/assets/scss/color.scss';
+@import '~@sibiaoke/ui-theme/src/mixins/themes';
+
+$sys-theme: (
+  light: (
+    color-text: $light-color-text-primary,
+    color-bg: $light-fill-base
+  ),
+  dark: (
+    color-text: $dark-color-text-primary,
+    color-bg: $dark-system-l0-color
+  ),
+);
+
 .fake-logo {
   width: 30px;
   height: 21px;
@@ -45,11 +57,15 @@ export default {
   display: flex;
   justify-content: space-between;
   user-select: none;
-  background: $system-l0-color;
   height: 48px;
   line-height: 48px;
   padding: 0 16px;
   font-size: 14px;
+
+  @include themify($sys-theme) {
+    color: themed('color-text');
+    background: themed('color-bg');
+  }
 
   .item {
     display: flex;

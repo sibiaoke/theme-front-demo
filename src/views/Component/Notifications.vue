@@ -28,12 +28,14 @@
       <div>
         <label>Error</label>
       </div>
-      <el-button @click="error" type="error">Open</el-button>
+      <el-button @click="error" type="danger">Open</el-button>
     </el-col>
   </el-row>
 </template>
 
 <script>
+import { Button } from 'element-ui'
+
 export default {
   methods: {
     oneLine() {
@@ -49,9 +51,38 @@ export default {
       })
     },
     withActions() {
+      // eslint-disable-next-line
+      let getMessage = h => {
+        return (
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <div>30-day trial expires on 2016-12-31.</div>
+            <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '24px' }}>
+              <div style={{ marginBottom: '8px' }}>
+                <Button
+                  size="small"
+                  style={{ width: '100%' }}
+                  onClick={() => this.handleAction('Launch')}
+                >
+                  Launch
+                </Button>
+              </div>
+              <div>
+                <Button
+                  size="small"
+                  style={{ width: '100%' }}
+                  onClick={() => this.handleAction('Dismiss')}
+                >
+                  Dismiss
+                </Button>
+              </div>
+            </div>
+          </div>
+        )
+      }
       this.$notify({
         title: 'NMaas is ready to use',
-        message: '30-day trial expires on 2016-12-31.'
+        message: getMessage(this.$createElement),
+        duration: 0
       })
     },
     success() {
@@ -70,6 +101,9 @@ export default {
       this.$notify.error({
         title: 'order is rejected'
       })
+    },
+    handleAction(action) {
+      this.$message(`${action} clicked`)
     }
   }
 }

@@ -28,7 +28,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '~@/assets/scss/color.scss';
+@import '~@sibiaoke/ui-theme/src/mixins/themes';
 
 .pill {
   display: inline-block;
@@ -37,10 +37,14 @@ export default {
   padding: 2px 12px;
   border-radius: 16px;
   line-height: 25px;
-  color: $text-color;
-  background: rgba(78, 78, 78, 0.4);
+
   opacity: 0.8;
   cursor: pointer;
+
+  @include themify($themes) {
+    color: themed('color-text-primary');
+    background: rgba(themed('border-color-base'), 0.4);
+  }
 
   svg {
     font-size: 14px;
@@ -61,7 +65,9 @@ export default {
   }
 
   &.selected {
-    background: #4e4e4e;
+    @include themify($themes) {
+      background: themed('border-color-base');
+    }
     opacity: 1;
   }
 }

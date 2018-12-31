@@ -68,6 +68,9 @@
         <el-form-item label="Label" prop="mail">
           <el-input placeholder="Placeholder" v-model="formModel.mail" />
         </el-form-item>
+        <el-form-item label="Label" prop="validMail">
+          <el-input placeholder="Placeholder" :value="formModel.validMail" />
+        </el-form-item>
       </el-col>
     </el-row>
     <el-row>
@@ -88,10 +91,12 @@ export default {
   data() {
     return {
       formModel: {
-        mail: 'Text'
+        mail: 'Text',
+        validMail: 'abc@example.com'
       },
       rules: {
-        mail: [{ type: 'email', message: 'Error: Invalid e-mail format', trigger: 'blur' }]
+        mail: [{ type: 'email', message: 'Error: Invalid e-mail format', trigger: 'blur' }],
+        validMail: [{ type: 'email', message: 'Error: Invalid e-mail format', trigger: 'blur' }]
       }
     }
   },

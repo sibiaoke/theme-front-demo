@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <div class="theme-switch">
-      <el-switch v-model="dark" active-color="#242424" inactive-color="#f2f2f2"></el-switch>
+      <el-button-group>
+        <el-button type="primary" size="mini" @click="theme = 'theme-dark'" :disabled="theme === 'theme-dark'">Dark</el-button>
+        <el-button type="primary" size="mini" @click="theme = 'theme-light'" :disabled="theme === 'theme-light'">Light</el-button>
+      </el-button-group>
     </div>
     <router-view/>
   </div>
@@ -10,11 +13,11 @@
 export default {
   data() {
     return {
-      dark: true
+      theme: 'theme-dark'
     }
   },
   watch: {
-    dark() {
+    theme() {
       this.changeTheme()
     }
   },
@@ -23,7 +26,7 @@ export default {
   },
   methods: {
     changeTheme() {
-      document.body.className = this.dark ? 'theme-dark' : 'theme-light'
+      document.body.className = this.theme
     }
   }
 }

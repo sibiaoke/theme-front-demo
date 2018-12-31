@@ -192,8 +192,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '~@/assets/scss/color.scss';
-
 .components-wrapper {
   padding: 24px;
   min-width: 1100px;
@@ -201,7 +199,7 @@ export default {
 
 .title {
   display: block;
-  border-bottom: 1px solid $gray-color;
+  border-bottom: 1px solid #767676;
   padding-bottom: 4px;
   margin-top: 24px;
   margin-bottom: 24px;
